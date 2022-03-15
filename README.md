@@ -1,0 +1,1 @@
+# TypeScript type challenges for myself
