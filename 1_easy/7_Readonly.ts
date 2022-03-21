@@ -29,18 +29,6 @@
   > View on GitHub: https://tsch.js.org/7
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type MyReadonly<T> = any
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type MyReadonly<T> = {
-  readonly [P in keyof T]: T[P];
-};
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
@@ -54,6 +42,15 @@ interface Todo1 {
     author: string;
   };
 }
+/* _____________ Original Code Here _____________ */
+
+// type MyReadonly<T> = any
+
+/* _____________ Your Code Here _____________ */
+
+type MyReadonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
 
 /* _____________ Further Steps _____________ */
 /*

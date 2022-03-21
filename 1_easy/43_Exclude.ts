@@ -8,19 +8,15 @@
   Implement the built-in Exclude<T, U>
   
   > Exclude from T those types that are assignable to U
+
+  for example
+
+  ```ts
+  type T = MyExclude<"a" | "b" | "c", "a"> // expected "b" | "c"
+  ```
   
   > View on GitHub: https://tsch.js.org/43
 */
-
-/* _____________ Original Code Here _____________ */
-
-// type MyExclude<T, U> = any;
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type MyExclude<T, U> = T extends U ? never : T;
 
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
@@ -40,6 +36,14 @@ type cases = [
     >
   >
 ];
+
+/* _____________ Original Code Here _____________ */
+
+// type MyExclude<T, U> = any;
+
+/* _____________ Your Code Here _____________ */
+
+type MyExclude<T, U> = T extends U ? never : T;
 
 /* _____________ Further Steps _____________ */
 /*

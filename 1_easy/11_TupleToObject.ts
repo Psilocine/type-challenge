@@ -18,18 +18,6 @@
   > View on GitHub: https://tsch.js.org/11
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type TupleToObject<T extends readonly any[]> = any
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type TupleToObject<T extends readonly any[]> = {
-  [key in T[number]]: key;
-};
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
@@ -51,6 +39,16 @@ type cases = [
 
 // @ts-expect-error
 type error = TupleToObject<[[1, 2], {}]>;
+
+/* _____________ Original Code Here _____________ */
+
+// type TupleToObject<T extends readonly any[]> = any
+
+/* _____________ Your Code Here _____________ */
+
+type TupleToObject<T extends readonly any[]> = {
+  [key in T[number]]: key;
+};
 
 /* _____________ Further Steps _____________ */
 /*

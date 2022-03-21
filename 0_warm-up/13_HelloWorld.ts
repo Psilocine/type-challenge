@@ -26,20 +26,18 @@
   > View on GitHub: https://tsch.js.org/13
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type HelloWorld = any // expected to be a string
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type HelloWorld = string; // expected to be a string
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect, NotAny } from "@type-challenges/utils";
 
 type cases = [Expect<NotAny<HelloWorld>>, Expect<Equal<HelloWorld, string>>];
+
+/* _____________ Original Code Here _____________ */
+
+// type HelloWorld = any // expected to be a string
+
+/* _____________ Your Code Here _____________ */
+
+type HelloWorld = string; // expected to be a string
 
 /* _____________ Further Steps _____________ */
 /*

@@ -20,16 +20,6 @@
   > View on GitHub: https://tsch.js.org/18
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type Length<T extends any> = any
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type Length<T extends readonly unknown[]> = T["length"];
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
@@ -50,6 +40,14 @@ type cases = [
   // @ts-expect-error
   Length<"hello world">
 ];
+
+/* _____________ Original Code Here _____________ */
+
+// type Length<T extends any> = any
+
+/* _____________ Your Code Here _____________ */
+
+type Length<T extends readonly unknown[]> = T["length"];
 
 /* _____________ Further Steps _____________ */
 /*

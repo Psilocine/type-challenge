@@ -20,16 +20,6 @@
   > View on GitHub: https://tsch.js.org/14
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type First<T extends any[]> = any
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type First<T extends any[]> = T[number] extends never ? never : T[0];
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
@@ -39,6 +29,14 @@ type cases = [
   Expect<Equal<First<[]>, never>>,
   Expect<Equal<First<[undefined]>, undefined>>
 ];
+
+/* _____________ Original Code Here _____________ */
+
+// type First<T extends any[]> = any
+
+/* _____________ Your Code Here _____________ */
+
+type First<T extends any[]> = T[number] extends never ? never : T[0];
 
 /* _____________ Further Steps _____________ */
 /*

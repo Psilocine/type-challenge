@@ -29,18 +29,6 @@
   > View on GitHub: https://tsch.js.org/4
 */
 
-/* _____________ Original Code Here _____________ */
-
-// type MyPick<T, K> = any
-
-
-
-/* _____________ Your Code Here _____________ */
-
-type MyPick<T, K extends keyof T> = {
-  [key in K]: T[key];
-};
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
@@ -65,6 +53,16 @@ interface Expected2 {
   title: string;
   completed: boolean;
 }
+
+/* _____________ Original Code Here _____________ */
+
+// type MyPick<T, K> = any
+
+/* _____________ Your Code Here _____________ */
+
+type MyPick<T, K extends keyof T> = {
+  [key in K]: T[key];
+};
 
 /* _____________ Further Steps _____________ */
 /*
