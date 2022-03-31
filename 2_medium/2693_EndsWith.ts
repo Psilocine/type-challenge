@@ -21,7 +21,7 @@ type cases = [
 
 /* _____________ Original Code Here _____________ */
 
-// type EndsWith<T extends string, U extends string> = any;
+type EndsWith<T extends string, U extends string> = T extends `${infer any}${U}` ? true: false;
 
 /* _____________ Your Code Here _____________ */
 
