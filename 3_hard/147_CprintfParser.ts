@@ -65,14 +65,12 @@ type ControlsMap = {
 type ParsePrintFormat<
   S extends string,
   Res extends string[] = []
-> = S extends `${infer L}${infer R}`
-  ? L extends "%"
-    ? R extends `${infer F}${infer Rest}`
-      ? F extends keyof ControlsMap
-        ? ParsePrintFormat<Rest, [...Res, ControlsMap[F]]>
-        : ParsePrintFormat<Rest, Res>
-      : Res
-    : ParsePrintFormat<R, Res>
+> = S extends `${any}%${infer R}`
+  ? R extends `${infer F}${infer Rest}`
+    ? F extends keyof ControlsMap
+      ? ParsePrintFormat<Rest, [...Res, ControlsMap[F]]>
+      : ParsePrintFormat<Rest, Res>
+    : Res
   : Res;
 /* _____________ Further Steps _____________ */
 /*
