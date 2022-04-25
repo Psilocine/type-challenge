@@ -46,7 +46,21 @@ type cases = [
 
 /* _____________ Your Code Here _____________ */
 
-type DropString<S, R> = any;
+type StringToUnion<T extends string> = T extends `${infer L}${infer Rest}`
+  ? L | StringToUnion<Rest>
+  : T;
+
+type DropString<
+  S extends string,
+  R extends string,
+  Res extends string = ""
+> = R extends ""
+  ? S
+  : S extends `${infer First}${infer End}`
+  ? First extends StringToUnion<R>
+    ? DropString<End, R, Res>
+    : DropString<End, R, `${Res}${First}`>
+  : Res;
 
 /* _____________ Further Steps _____________ */
 /*
